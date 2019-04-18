@@ -14,8 +14,6 @@ class AuthorsController < ApplicationController
   # GET /authors/1.json
   def show; end
 
-  # before_filter :zero_authors_or_authenticated, only: %i[new create]
-
   def zero_authors_or_authenticated
     unless Author.count == 0 || current_user
       redirect_to root_path
@@ -30,8 +28,6 @@ class AuthorsController < ApplicationController
 
   # GET /authors/1/edit
   def edit; end
-
-  # before_filter :require_login, except: %i[new create]
 
   # POST /authors
   # POST /authors.json
